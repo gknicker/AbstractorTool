@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/PenatnaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ca689840-eb61-4a63-9a4e-c3b69c770d82" isExpanded="false" absoluteBounds="2.875, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/PenatnaDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9792a1ed-fdfc-4ea1-a89f-cb5bbef84a4c" absoluteBounds="2.89, 2.585, 1.9700000000000002, 3.9031168619791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2606c985-f041-43c1-ae32-986668310c85" absoluteBounds="0.5, 0.5, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/PenatnaDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f9c5166-7cd1-4253-a491-234a56f12996" absoluteBounds="0.515, 0.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 2.35); (2.5 : 2.35)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PenatnaDataContext/User/User_Order" />
+      <nodes>
+        <classShapeMoniker Id="ca689840-eb61-4a63-9a4e-c3b69c770d82" />
+        <classShapeMoniker Id="2606c985-f041-43c1-ae32-986668310c85" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3fc2c7b0-9d6d-4711-b022-0ac3da97285e" absoluteBounds="0.5, 4.875, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/PenatnaDataContext/Invoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="607cd0d3-b3b1-458e-893a-0e901971842c" absoluteBounds="0.51500000000000012, 5.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 4.57851399739583); (1.5 : 4.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PenatnaDataContext/Order/Order_Invoice" />
+      <nodes>
+        <classShapeMoniker Id="2606c985-f041-43c1-ae32-986668310c85" />
+        <classShapeMoniker Id="3fc2c7b0-9d6d-4711-b022-0ac3da97285e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="05c2f733-b34f-4968-af8a-25824704d0cc" absoluteBounds="2.875, 4.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PenatnaDataContext/Abstract" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00110d89-1d7f-4db0-b553-b4421ea0638e" absoluteBounds="2.89, 5.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.57851399739583); (2.875 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PenatnaDataContext/Order/Order_Abstract" />
+      <nodes>
+        <classShapeMoniker Id="2606c985-f041-43c1-ae32-986668310c85" />
+        <classShapeMoniker Id="05c2f733-b34f-4968-af8a-25824704d0cc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4c5a4ff7-19aa-4dbc-8043-d57ae9ddf23e" absoluteBounds="2.875, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PenatnaDataContext/Page" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c67ac1b-43cf-4f5e-bd1f-fb8c5332fe2a" absoluteBounds="2.8900000000000006, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.66429768880208); (2.875 : 3.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PenatnaDataContext/Order/Order_Page" />
+      <nodes>
+        <classShapeMoniker Id="2606c985-f041-43c1-ae32-986668310c85" />
+        <classShapeMoniker Id="4c5a4ff7-19aa-4dbc-8043-d57ae9ddf23e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="36394838-ebb3-4555-a182-b2b823c426df" absoluteBounds="2.875, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PenatnaDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="813fb641-acd3-4b68-bc6f-c5e06e74809e" absoluteBounds="2.89, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

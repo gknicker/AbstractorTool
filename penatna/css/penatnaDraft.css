@@ -1,0 +1,91 @@
+﻿/* temp */
+#initialOpen {
+	display: none;
+	visibility: hidden;
+}
+
+/* global */
+ul.horizontal-list li {
+	display: inline;
+}
+
+/* header */
+#header {
+	background-color: #6699FF;
+	position: fixed;
+	top: -10px;
+	left: -10px;
+	width: 110%;
+	height: 50px;
+}
+
+/* info */
+#infoContainer {
+	float: left;
+	margin: 50px 20px 0 20px;
+	width: 60%;
+	height: 150px;
+	border: 2px solid #6699FF;
+	border-radius: 10px;
+}
+
+/* progress */
+#progressContainer {
+	float: right;
+	margin: 50px 20px 0 0;
+	width: 30%;
+	height: 150px;
+	border: 2px solid #6699FF;
+	border-radius: 10px;
+}
+
+/* table */
+#tableContainer {
+	float: left;
+	margin: 20px 0 0 20px;
+	width: 60%;
+	height: 250px;
+	border: 2px solid #6699FF;
+	border-radius: 10px;
+}
+
+#tableHeader {
+	width: 100%;
+	height: 30px;
+	padding: 5px 8px;
+	border-bottom: 2px solid #6699FF;
+}
+
+#tableHeader ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	overflow: hidden;
+}
+
+#tableHeader ul li {
+	width: 100px;
+	float: left;
+	/*
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid black;
+	*/
+}
+
+#tableHeader ul li:first-child {
+	padding: 0;
+	border: none;
+}
+
+/* details */
+#detailsContainer {
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	width: 30%;
+	height: 250px;
+	border: 2px solid #6699FF;
+	border-radius: 10px;
+}

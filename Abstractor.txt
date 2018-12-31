@@ -1,0 +1,71 @@
+Sub InvoiceAbstractor()
+
+    Dim wbSource As Workbook
+    Dim wsSource As Worksheet
+    Dim rnOrNmSrc As Range
+    Dim rnSrFeSrc As Range
+    Dim rnCpFeSrc As Range
+    Dim rnInNmSrc As Range
+    Dim wbTarget As Workbook
+    Dim wsTarget As Worksheet
+    Dim rnOrNmTgt As Range
+    Dim rnSrFeTgt As Range
+    Dim rnCpFeTgt As Range
+    Dim rnInNmTgt As Range
+    Dim counter As Integer
+    
+    Set wbSource = ActiveWorkbook
+    Set wsSource = wbSource.Sheets(1)
+    Set wbTarget = Workbooks.Open("C:\CoreLogic\Invoice.xlsx")
+    Set wsTarget = wbTarget.Sheets(1)
+    Set rnOrNmTgt = wsTarget.Range("E21")
+    Set rnSrFeTgt = wsTarget.Range("I22")
+    Set rnCpFeTgt = wsTarget.Range("I23")
+    Set rnInNmTgt = wsTarget.Range("K7")
+    
+    counter = 0
+    
+    For i = 1 To 200
+        If wsSource.Cells(i, "A") <> "" And wsSource.Cells(i, "J") = "" Then
+            Set rnOrNmSrc = wsSource.Range("A" & i)
+            Set rnSrFeSrc = wsSource.Range("G" & i)
+            Set rnCpFeSrc = wsSource.Range("H" & i)
+            Set rnInNmSrc = wsSource.Range("I" & i)
+            
+            rnOrNmTgt.Value = rnOrNmSrc.Value
+            rnSrFeTgt.Value = rnSrFeSrc.Value / 25
+            If rnCpFeSrc.Value = "no find" Or rnCpFeSrc.Value = "NO FIND" Then
+                rnCpFeTgt.Value = 0
+            Else
+                rnCpFeTgt.Value = rnCpFeSrc.Value
+            End If
+            rnInNmTgt.Value = rnInNmSrc.Value
+            wsTarget.Range("K8") = DateValue(Now)
+            
+            formDate = Replace(Date, "/", "-")
+            fileName = "CL # " & rnOrNmSrc.Value & " INV " & rnInNmSrc.Value
+            filePath = "C:\CoreLogicInvoices"
+            
+            wbTarget.ExportAsFixedFormat _
+                Type:=xlTypePDF, _
+                fileName:=filePath & "\" & fileName, _
+                Quality:=xlQualityStandard, _
+                IncludeDocProperties:=False, _
+                IgnorePrintAreas:=False, _
+                OpenAfterPublish:=False
+            
+            wsSource.Range("J" & i).Value = DateValue(Now)
+            
+            Set rnOrNmSrc = Nothing
+            Set rnSrFeSrc = Nothing
+            Set rnCpFeSrc = Nothing
+            Set rnInNmSrc = Nothing
+        
+            counter = counter + 1
+        End If
+    Next
+    
+    wbTarget.Close SaveChanges:=False
+    MsgBox (counter & " invoices saved at " & filePath)
+    
+End Sub

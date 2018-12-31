@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="penatna.master.cs" Inherits="Penatna.PenatnaPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" runat="server">
+<head runat="server">
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Penatna" />
+	<meta name="keywords" content="Penatna" />
+	<meta name="author" content="Penatna" />
+	<link type="image/x-icon" rel="icon" href="img/penatna.ico" />
+	<link type="image/x-icon" rel="shortcut icon" href="img/penatna.ico" />
+	<link type="text/css" rel="stylesheet" href="css/penatna.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobilemenu.js"></script>
+	<script type="text/javascript" src="js/superfish.js"></script>
+	<script type="text/javascript" src="js/penatna.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) { $("ul.nav").mobileMenu(); });
+	</script>
+</head>
+<body>
+	<div id="header">
+	</div>
+	<div id="body">
+		<form id="form1" runat="server">
+			<div id="content">
+				<asp:ContentPlaceHolder ID="ContentArea" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+		</form>
+	</div>
+	<div id="footer">
+	</div>
+</body>
+</html>

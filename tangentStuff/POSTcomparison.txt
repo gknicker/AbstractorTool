@@ -1,0 +1,64 @@
+DOCSOLUTIONS POST
+POST https://www.docsolutions.corelogic.com/index.aspx?Function=LogonCheck HTTP/1.1
+Host: www.docsolutions.corelogic.com
+Connection: keep-alive
+Content-Length: 71
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: https://www.docsolutions.corelogic.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: https://www.docsolutions.corelogic.com/index.aspx?Function=Logoff
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cookie: LoginAttempts=0; Infinity=60c65edf-3cc0-4d82-abed-a29301070037
+
+hidWarning=&UserId=ewexler&Password=40mil&QueryString=&btnLogon=Sign+On
+HTTP/1.1 302 Found
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Location: /index.aspx
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 2.0.50727
+Set-Cookie: Infinity=d532631f-2fbd-4867-8ef4-a293010722a2; expires=Sat, 14-Dec-2013 07:59:59 GMT; path=/; secure
+Set-Cookie: LoginAttempts=0; path=/
+X-Powered-By: ASP.NET
+Date: Fri, 13 Dec 2013 23:57:59 GMT
+Content-Length: 130
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="%2findex.aspx">here</a>.</h2>
+</body></html>
+
+
+OUR POST
+POST https://www.docsolutions.corelogic.com/index.aspx?Function=LogonCheck HTTP/1.1
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: https://www.docsolutions.corelogic.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: https://www.docsolutions.corelogic.com/index.aspx
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Host: www.docsolutions.corelogic.com
+Content-Length: 71
+Expect: 100-continue
+Connection: Keep-Alive
+
+hidWarning=&UserId=ewexler&Password=40mil&QueryString=&btnLogon=Sign+On
+HTTP/1.1 302 Found
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Location: /index.aspx
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 2.0.50727
+Set-Cookie: Infinity=b14a680d-61c2-44df-b214-a2930105bda5; expires=Sat, 14-Dec-2013 07:59:59 GMT; path=/; secure
+Set-Cookie: LoginAttempts=0; path=/
+X-Powered-By: ASP.NET
+Date: Fri, 13 Dec 2013 23:52:54 GMT
+Content-Length: 130
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="%2findex.aspx">here</a>.</h2>
+</body></html>

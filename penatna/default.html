@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Penatna</title>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/penatnaDraft.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/penatna.js"></script>
+	<script type="text/javascript">
+		var ordersJSON;
+		jQuery(document).ready(function ($) {
+			$.getJSON("api/orders", {}, function (data, textStatus, jqXHR) {
+				ordersJSON = data;
+				var orderTableBody = $("#orders").find("tbody");
+				for (var i = 0; i < data.length; i++) {
+					var order = data[i];
+					var row = $("<tr>").appendTo(orderTableBody);
+					$("<td>").appendTo(row).text(order.CaseNumber);
+					$("<td>").appendTo(row).text(formatDate(order.DateAssigned));
+					$("<td>").appendTo(row).text(formatDate(order.DateCompleted));
+					$("<td>").appendTo(row).text(order.Name);
+					$("<td>").appendTo(row).text(formatDate(order.InstrumentDate));
+					$("<td>").appendTo(row).text(formatDate(order.RecordingDate));
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="header">
+		<div id="headerToolbar">
+			<div id="logo"></div>
+			<ul class="horizontal-list" id="toolbarNav">
+				<li class="top-toolbar-settings">
+					settings
+					<!--
+						date format options
+						buttons or dropdown for main table
+					-->
+				</li>
+				<li class="top-toolbar-logout">logout</li>
+			</ul>
+		</div>
+	</div>
+	<div id="initialOpen">
+		<div id="loginRegister">
+			<!--
+				fields and buttons to log in or register
+				white fade-out as background
+			-->
+			<div id="title">
+				<p id="titlePenatna">penatna</p>
+				<p id="titleDevelopers">by software decoded</p>
+				<button class="info-button" id="toolInformation">
+					What is Penatna?
+					<!-- opens information about what penatna does -->
+				</button>
+			</div>
+			<div id="login">
+				<p class="user-info">
+					If you already have an account with Penatna,
+					please enter your login data.
+				</p>
+				<form class="login-register-form">
+					Username: <input type="text" name="usr"> <br>
+					Password: <input type="password" name="pwd">
+				</form> <br>
+				<button type="button" class="btn btn-primary">Submit</button>
+					Log In
+					<!--
+						receive form input and log user in
+						vanish login-register window
+						load user data for user-data
+					-->
+				</button>
+			</div>
+			<div id="register">
+				<p>
+					If you do not have an account,
+					please fill in the information below.
+					We highly recommend that you use the same username and password
+					as your CoreLogic website login, but this is not required.
+				</p>
+				<button type="button" class="btn btn-primary">Submit</button>
+				<form class="login-register-form">
+					<!-- checkbox to determine "same data as CoreLogic login" -->
+					Username: <input type="text" name="req-usr"> <br>
+					Password: <input type="password" name="req-pwd"> <br>
+					Verify Password: <input type="password" name="pwd-verif"> <br>
+					CoreLogic Username: <input type="text" name="cl-usr"> <br>
+					CoreLogic Password: <input type="password" name="cl-pwd">
+				</form>
+				<button class="submit-data" id="registerButton" type="button">
+					Register
+					<!--
+						accesses CoreLogic site
+						pulls order data based on user ID and order numbers
+						vanish login-register window
+						updates user-specific database-side order table
+						response fills client-side table with database info
+					-->
+				</button>
+			</div>
+		</div>
+		<img class="functionality-image" id="middleLeft" />
+		<img class="functionality-image" id="middleRight" />
+		<img class="functionality-image" id="bottomLeft" />
+		<img class="functionality-image" id="bottomRight" />
+		<img class="functionality-image" id="bottomCenter" />
+	</div>
+	<div id="mainContent">
+		<div id="infoContainer"></div>
+		<div id="progressContainer"></div>
+		<div id="tableContainer" class="table-responsive">
+			<table id="orders" class="table table-hover">
+				<thead>
+					<tr>
+						<th>Case Number</th>
+						<th>Assigned Date</th>
+						<th>Completed Date</th>
+						<th>Borrower Name</th>
+						<th>Instrument Date</th>
+						<th>Recording Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- populated using jQuery -->
+				</tbody>
+			</table>
+		</div>
+		<div id="detailsContainer"></div>
+	</div>
+</body>
+</html>
